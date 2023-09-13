@@ -38,15 +38,17 @@ export class UsersComponent implements OnInit {
         this.getAllUsers();
       });
   }
+
   deleteUserById(id: any) {
     this.commonService.deleteUserById(id).subscribe((data) => {
-      alert('deleted' + id);
+      alert('deleted' + ' ' + id);
       this.getAllUsers();
     });
   }
+
   editUserById(id: any) {
     this.commonService.getUserById(id).subscribe((data) => {
-      // alert('edit successfully');
+      alert('Edit successfully,Please go to User Info to edit');
 
       this.userModel.moblie = data.moblie;
       this.userModel.name = data.name;
